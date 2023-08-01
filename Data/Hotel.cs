@@ -1,4 +1,4 @@
-﻿namespace MinimalAPI;
+﻿namespace MinimalAPI.Data;
 
 public class Hotel
 {
