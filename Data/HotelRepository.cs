@@ -29,8 +29,11 @@ public class HotelRepository : IHotelRepository
         _context.Hotels.Remove(hotelFromDb);
     }
 
-    public Task<List<Hotel?>> GetHotelsAsync() => _context.Hotels.ToListAsync();
+    public Task<List<Hotel>> GetHotelsAsync() => _context.Hotels.ToListAsync();
 
+    public Task<List<Hotel>> GetHotelsAsync(string name) =>
+        _context.Hotels.Where(h => h.Name.Contains(name)).ToListAsync();
+    
     public async Task<Hotel?> GetHotelAsync(long id) =>
         await _context.Hotels.FindAsync(id);
 

@@ -6,5 +6,5 @@ public class HotelDb : DbContext
     {
     }
 
-    public DbSet<Hotel?> Hotels => Set<Hotel>();
+    public DbSet<Hotel> Hotels => Set<Hotel>();
 }
